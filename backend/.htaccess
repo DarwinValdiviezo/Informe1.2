@@ -1,0 +1,32 @@
+# Habilitar la visualización de errores
+php_flag display_errors On
+php_value error_reporting E_ALL
+
+# Permitir métodos HTTP como POST, GET, PUT, DELETE
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} ^(POST|GET|PUT|DELETE) [NC]
+RewriteRule .* - [L]
+</IfModule>
+
+# Configurar CORS para permitir solicitudes desde cualquier origen
+<IfModule mod_headers.c>
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+</IfModule>
+
+# Desactivar caché para solicitudes en PHP, HTML, JS y JSON
+<IfModule mod_headers.c>
+<FilesMatch "\.(php|html|js|json)$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+</FilesMatch>
+</IfModule>
+
+# Desactivar caché para LiteSpeed en la carpeta backend
+<IfModule LiteSpeed>
+RewriteCond %{REQUEST_URI} ^/backend/ [NC]
+RewriteRule .* - [E=Cache-Control:no-cache]
+</IfModule>
