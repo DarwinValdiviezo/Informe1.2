@@ -3,7 +3,7 @@ import '../services/api_service.dart';
 
 class DeleteUserScreen extends StatelessWidget {
   final String token;
-  final int userId; // id como int
+  final int userId;
 
   DeleteUserScreen({required this.token, required this.userId});
 

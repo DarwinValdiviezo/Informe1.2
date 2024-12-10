@@ -14,7 +14,6 @@ class _PantallaRegistrarUsuarioState extends State<PantallaRegistrarUsuario> {
   final _contrasenaController = TextEditingController();
   String _mensajeError = "";
 
-  // Lista de dominios permitidos
   final List<String> dominiosPermitidos = [
     "gmail.com",
     "yahoo.com",

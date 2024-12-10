@@ -1,32 +1,32 @@
 import 'package:flutter/material.dart';
 
 class Estilos {
-  // Colores principales
+  // Colores
   static const Color colorPrimario = Color(0xFF6B4EFF); // Violeta
   static const Color colorTexto = Color(0xFF2D3748); // Gris oscuro
   static const Color colorError = Color(0xFFE53E3E); // Rojo para errores
 
-  // Estilo de encabezados
+  // Enzcezado
   static const TextStyle estiloEncabezado = TextStyle(
     color: colorTexto,
     fontSize: 24,
     fontWeight: FontWeight.bold,
   );
 
-  // Estilo para mensajes de error
+  // Mensajes error
   static const TextStyle estiloError = TextStyle(
     color: colorError,
     fontSize: 16,
     fontWeight: FontWeight.bold,
   );
 
-  // Estilo de texto informativo
+  // Texto de info
   static TextStyle estiloInformativo = TextStyle(
     color: colorTexto.withOpacity(0.7),
     fontSize: 16,
   );
 
-  // Decoración para campos de texto
+  // Campos de texto
   static InputDecoration decoracionInput(String etiqueta, IconData icono) {
     return InputDecoration(
       labelText: etiqueta,
@@ -46,7 +46,7 @@ class Estilos {
     );
   }
 
-  // Estilo de botones
+  // Botones
   static ButtonStyle estiloBoton = ElevatedButton.styleFrom(
     backgroundColor: colorPrimario,
     shape: RoundedRectangleBorder(

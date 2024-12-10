@@ -1,5 +1,5 @@
 class User {
-  final int id; // El id se maneja como entero
+  final int id;
   final String name;
   final String email;
 
@@ -7,7 +7,7 @@ class User {
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
-      id: json['id'], // Espera un entero desde el backend
+      id: json['id'],
       name: json['name'],
       email: json['email'],
     );
